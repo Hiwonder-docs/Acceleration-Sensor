@@ -10,7 +10,6 @@ function initMenu() {
     menuContainer.addEventListener('click', function(e) {
         const target = e.target.closest('.toctree-l2>a');
         if (target) {
-            console.log(1);
             target.parentNode.classList.toggle('h-current');
         }
     });

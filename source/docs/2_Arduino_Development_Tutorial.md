@@ -1,6 +1,6 @@
-# 2. Arduino Development Manual
+# 2. Arduino Development
 
-<img src="../_static/media/chapter_1/section_1/media/image2.png" class="common_img" style="width:600px;"/>
+<img class="common_img" src="../_static/media/chapter_1/section_2/media/image3.png" style="width:300px" />
 
 ## 2.1 Getting Started
 
@@ -8,85 +8,94 @@
 
 This section illustrates connecting a 4-pin cable to the SDA and SCL ports on the Arduino expansion board. Refer to the diagram below.
 
-<img src="../_static/media/chapter_2/section_1/media/image2.png" class="common_img" />
+<img class="common_img" src="../_static/media/chapter_1/section_2/media/image4.png" style="width:500px" />
 
 If you do not have an Arduino expansion board, use a Dupont wire to directly connect to the Arduino development board, just as below:
 
-<img src="../_static/media/chapter_2/section_1/media/image3.png" class="common_img" />
+<img class="common_img" src="../_static/media/chapter_1/section_2/media/image5.png" style="width:500px" />
 
-> [!Note]
+> [!NOTE]
 >
-> * When using Hiwonder's lithium battery, connect the battery cable with the red wire to the positive (+) terminal and the black wire to the negative (-) terminal of the DC port. 
+> * When using Hiwonder's lithium battery, connect the battery cable with the red wire to the positive (+) terminal and the black wire to the negative (–) terminal of the DC port.
 >
-> * If the battery is not connected to the cables, do not connect the cable ends directly together. Doing so may cause a short circuit and damage the system. 
-> 
+> * If the battery is not connected to the cables, do not connect the cable ends directly together. Doing so may cause a short circuit and damage the system.
+>
 > * Before powering on, ensure that no metal objects are touching the controller. Otherwise, the exposed pins at the bottom of the board may cause a short circuit and damage the controller.
->
 
 ### 2.1.2 Environment Configuration
 
-You can install the Arduino IDE on a PC. Download path: **"2 Software Tools & Programs Collection → 01 Software Installation Packages → Arduino Installation Package."** For more information, please refer to the relevant tutorials.
+You can install the Arduino IDE on a PC. Download path: "**[Appendix→ Arduino Installation Package.](https://drive.google.com/drive/folders/17M8AyV75WQptWOKvpO0UW3ITDHpaFf3x?usp=sharing)**" For more information, please refer to the relevant tutorials.
 
 ## 2.2 Test Case
 
 Program to display the values detected by the accelerometer sensor in the terminal window.
 
 ### 2.2.1 Program Download
-(1) For the Arduino and UNO development board equipped with the expansion board, use a USB cable to connect them to the computer. Open Arduino IDE, click **File → New File → New**, and import the program located in the same directory as this tutorial. 
 
-(2) Remember to select the correct development board and port (ports shown below are for reference only). Then compile and upload the program. 
+1. For the Arduino and UNO development board equipped with the expansion board, use a USB cable to connect them to the computer. You can open Arduino IDE, click "**File → NewFile → New**," and import the program located in the same directory as this tutorial.
 
-<img src="../_static/media/chapter_2/section_1/media/image4.png" class="common_img" />
+2. Remember to select the correct development board and port. The ports shown below are for reference only. Then compile and upload the program.
 
-(3) After the code is uploaded, click  <img src="../_static/media/chapter_2/section_1/media/image5.png" /> to open the serial monitor, set the baud rate to **9600** to observe the output.
+   <img class="common_img" src="../_static/media/chapter_1/section_2/media/image6.png" style="width:300px" />
+
+3. After the code is uploaded, click <img src="../_static/media/chapter_1/section_2/media/image7.png" style="width:50px" /> to open the serial monitor, set the baud rate to 9600 to observe the output.
 
 ### 2.2.2 Project Outcome
 
 The data on the serial monitor change continuously when the accelerometer is adjusted manually. Along the sensor's X, Y, and Z axes, ax, ay, and az represent multiples of gravitational acceleration; gx, gy, and gz represent angular velocity; and GX and GY represent tilt angles along the X and Y axes.
 
-<img src="../_static/media/chapter_2/section_1/media/image6.png" class="common_img" />
+<img class="common_img" src="../_static/media/chapter_1/section_2/media/image8.png" style="width:500px" />
 
 ### 2.2.3 Program Brief Analysis
 
-* **Import Libraries**
+**1. Import Libraries**
 
-{lineno-start=7}
-
-```cpp
-#include <MPU6050.h>   //Include the MPU6050 library
-#include <I2Cdev.h>	//Include the I2C communication library
+```py
+#include <MPU6050.h> //Include the MPU6050 library
+#include <I2Cdev.h> //Include the I2C communication library
 ```
 
-* **Define variables**
+**2. Define variables**
 
-{lineno-start=10}
-
-```cpp
+```py
 MPU6050 accelgyro;
-int16_t ax, ay, az;	//Get 3-axis acceleration values from the sensor
-int16_t gx, gy, gz;	//Get the sensor's 3-axis tilt angles
-float ax0, ay0, az0;	//Store filtered acceleration values
-float gx0, gy0, gz0;	//Store filtered tilt angles
-float ax1, ay1, az1;	//Store calibrated acceleration values
-float gx1, gy1, gz1;	//Store calibrated angular velocity values
+
+int16_t ax, ay, az; //Get 3-axis acceleration values from the sensor
+
+int16_t gx, gy, gz; //Get the sensor's 3-axis tilt angles
+
+float ax0, ay0, az0; //Store filtered acceleration values
+
+float gx0, gy0, gz0; //Store filtered tilt angles
+
+float ax1, ay1, az1; //Store calibrated acceleration values
+
+float gx1, gy1, gz1; //Store calibrated angular velocity values
+
 float dx;
+
 float dx;
+
 /* Store deviation values of tilt angles and acceleration */
+
 int ax_offset, ay_offset, az_offset, gx_offset, gy_offset, gz_offset;
-float radianY;	//Record tilt angle along the X axis
-float radianY;	//记Record tilt angle along the Y axis
-float radianZ;	//Record tilt angle along the z axis
-float radianX_last;	//Final X-axis tilt angle
-float radianY_last;	//Final Y-axis tilt angle
+
+float radianY; //Record tilt angle along the X axis
+
+float radianY; //Record tilt angle along the Y axis
+
+float radianZ; //Record tilt angle along the z axis
+
+float radianX_last; //Final X-axis tilt angle
+
+float radianY_last; //Final Y-axis tilt angle
 ```
 
 Define the variables required for calculations.
 
-* **Update tilt sensor data**
+**3. Update tilt sensor data**
 
-{lineno-start=30}
-
-```cpp
+```py
 void update_mpu6050()
 {
   static uint32_t timer_u;
@@ -125,11 +134,9 @@ void update_mpu6050()
 }
 ```
 
-* **Print data**
+**4. Print data**
 
-{lineno-start=69}
-
-```cpp
+```py
 void print_data()
 {
   static uint32_t timer_p;
@@ -149,11 +156,9 @@ void print_data()
 }
 ```
 
-* **Serial Port Initialization**
+**5. Serial Port Initialization**
 
-{lineno-start=87}
-
-```cpp
+```py
 void setup()
 {
   Serial.begin(9600);
@@ -176,11 +181,9 @@ void setup()
 }
 ```
 
-* **Loop Process**
+**6. Loop Process**
 
-{lineno-start=107}
-
-```cpp
+```py
 void setup()
 {
   update_mpu6050:
@@ -188,4 +191,3 @@ void setup()
   delay(500);
 }
 ```
-
