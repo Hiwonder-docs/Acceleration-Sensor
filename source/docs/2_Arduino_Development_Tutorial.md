@@ -36,7 +36,7 @@ Program to display the values detected by the accelerometer sensor in the termin
 
 2. Remember to select the correct development board and port. The ports shown below are for reference only. Then compile and upload the program.
 
-   <img class="common_img" src="../_static/media/chapter_1/section_2/media/image6.png" style="width:300px" />
+<img class="common_img" src="../_static/media/chapter_1/section_2/media/image6.png" style="width:300px" />
 
 3. After the code is uploaded, click <img src="../_static/media/chapter_1/section_2/media/image7.png" style="width:50px" /> to open the serial monitor, set the baud rate to 9600 to observe the output.
 
