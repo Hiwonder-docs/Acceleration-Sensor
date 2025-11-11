@@ -15,6 +15,5 @@ Acceleration Sensor
    docs/2_Arduino_Development_Tutorial.md
    docs/3_Raspberry_Pi_Development_Tutorial.md
    docs/4_Jetson_Development_Tutorial.md
-   docs/5_Arduino_IDE_Installation.md
    docs/Appendix.md
    Download <https://drive.google.com/drive/folders/1zvkZF-HGfoq6O3zxRlvzqpeD3tTrluPD?usp=sharing>

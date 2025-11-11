@@ -1,6 +1,6 @@
 # 1. Acceleration Sensor Manual
 
-<img class="common_img" src="../_static/media/chapter_1/section_1/section/image2.png" style="width:300px" />
+<img class="common_img" src="../_static/media/chapter_1/section_1/image2.png" style="width:300px" />
 
 ## 1.1 Acceleration Sensor Description
 
@@ -15,7 +15,7 @@ It primarily uses the MPU6050 component. It also integrates a 3-axis MEMS gyrosc
 The acceleration features three 16-bit ADCs for both the gyroscope and accelerometer to convert measured analog signals into digital outputs. For precise tracking of fast and slow motion, its measurement range is adjustable.  
 The gyroscope supports ±250/±500/±1000/±2000°/s (dps), and the accelerometer supports ±2/±4/±8/±16g.
 
-<img class="common_img" src="../_static/media/chapter_1/section_1/section/image3.png" style="width:100px" />
+<img class="common_img" src="../_static/media/chapter_1/section_1/image3.png" style="width:100px" />
 
 ## 1.2 Notice
 
@@ -29,7 +29,7 @@ For more information, you may refer to "**[Acceleration sensor schematic](https:
 
 ### 1.3.1 Pin Instruction
 
-<img class="common_img" src="../_static/media/chapter_1/section_1/section/image2.png" style="width:300px" />
+<img class="common_img" src="../_static/media/chapter_1/section_1/image2.png" style="width:300px" />
 
 | **Pin** | **Instruction** |
 | :-----: | :-------------: |
@@ -40,7 +40,7 @@ For more information, you may refer to "**[Acceleration sensor schematic](https:
 
 ### 1.3.2 Specifications
 
-<table class="docutils-nobg" border="1">
+<table  class="docutils-nobg" style="margin:0 auto" border="1">
 <colgroup>
 <col style="width: 50%" />
 <col style="width: 50%" />
@@ -121,5 +121,5 @@ You can refer to the case tutorials and programs for different platforms in the 
 
 The MPU6050 sensor measures acceleration along three axes, converts the analog values into digital data, and outputs them via the IIC bus. When the device is rotated, the acceleration value changes on the corresponding axis and is shown on the serial monitor.
 
-<img class="common_img" src="../_static/media/chapter_1/section_1/media/image4.png" style="width:500px" />
+<img class="common_img" src="../_static/media/chapter_1/section_1/image4.png" style="width:500px" />
 

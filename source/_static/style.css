@@ -4,14 +4,14 @@ section p {
 .highlight span.err{
     border:none;
 }
-/*.wy-menu-vertical > ul > li:last-child >a{
+.wy-menu-vertical > ul > li:last-child >a{
     display: block;
     width: fit-content;
     margin: 1.618em;
     background: #f98800;
     color: #fff;
     border-radius: 8px;
-}*/
+}
 .caption{
     display:none;
 }
