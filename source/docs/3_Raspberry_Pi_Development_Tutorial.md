@@ -12,15 +12,15 @@ Connect the accelerometer's 5V, GND, SDA, and SCL pins to the corresponding pins
 
 > [!NOTE]
 >
-> * When using Hiwonder's lithium battery, connect the battery cable with the red wire to the positive (+) terminal and the black wire to the negative (–) terminal of the DC port.
+> * **When using Hiwonder's lithium battery, connect the battery cable with the red wire to the positive (+) terminal and the black wire to the negative (–) terminal of the DC port.**
 >
-> * If the battery is not connected to the cables, do not connect the cable ends directly together. Doing so may cause a short circuit and damage the system.
+> * **If the battery is not connected to the cables, do not connect the cable ends directly together. Doing so may cause a short circuit and damage the system.**
 >
-> * Before powering on, ensure that no metal objects are touching the controller. Otherwise, the exposed pins at the bottom of the board may cause a short circuit and damage the controller.
+> * **Before powering on, ensure that no metal objects are touching the controller. Otherwise, the exposed pins at the bottom of the board may cause a short circuit and damage the controller.**
 
 ### 3.1.2 Environment Configuration
 
-Install NoMachine software on PC. You can find it under "**[Appendix -> Remote Connection Software](https://drive.google.com/drive/folders/1vAcJhnu8ZXBmEnPtpl-M5sYrCZ7iH3GQ?usp=sharing)**". For the detailed operations of NoMachine, please refer to the same directory.
+Install VNC software on PC. You can find it under "**[Appendix -> Remote Connection Software](https://drive.google.com/drive/folders/1vAcJhnu8ZXBmEnPtpl-M5sYrCZ7iH3GQ?usp=sharing)**". For the detailed operations of VNC, please refer to the same directory.
 
 Drag the program and SDK library files into the Raspberry Pi system image, the drag-and-drop action here is for illustration only. 
 
@@ -47,8 +47,6 @@ This example displays the acceleration sensor’s readings in the Raspberry Pi t
 ```bash
 cd Desktop/Sensor_Demo/
 ```
-
-<img class="common_img" src="../_static/media/chapter_1/section_3/media/image6.png" style="width:500px" />
 
 2. Run the program by entering:
 

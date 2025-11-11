@@ -122,4 +122,3 @@ You can refer to the case tutorials and programs for different platforms in the 
 The MPU6050 sensor measures acceleration along three axes, converts the analog values into digital data, and outputs them via the IIC bus. When the device is rotated, the acceleration value changes on the corresponding axis and is shown on the serial monitor.
 
 <img class="common_img" src="../_static/media/chapter_1/section_1/image4.png" style="width:500px" />
-

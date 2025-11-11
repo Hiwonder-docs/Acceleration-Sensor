@@ -12,7 +12,7 @@ This section uses DuPont wires to connect acceleration modules. For wiring instr
 
 > [!NOTE]
 >
-> **Note: Before powering on, ensure that no metal objects are touching the controller. Otherwise, the exposed pins at the bottom of the board may cause a short circuit and damage the controller.**
+> **Before powering on, ensure that no metal objects are touching the controller. Otherwise, the exposed pins at the bottom of the board may cause a short circuit and damage the controller.**
 
 ### 4.1.2 Environment Configuration
 
@@ -92,7 +92,7 @@ def read_word(reg):
     return value
 ```
 
-Read the high 8 bits of a register using high = bus.read_byte_data(MPU6050_ADDR, reg), then read the low 8 bits using low = bus.read_byte_data(MPU6050_ADDR, reg).
+Read the high 8 bits of a register using `high = bus.read_byte_data(MPU6050_ADDR, reg)`, then read the low 8 bits using `low = bus.read_byte_data(MPU6050_ADDR, reg)`.
 
 Combine the two bytes and return the resulting value.
 
